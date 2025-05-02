@@ -1,0 +1,2 @@
+I am creating a zombie survival/resource management simulator. You'll be able to choose from a set of actions each day, with random events possibly occurring at the end of the day. 
+I've written most of the code, but I feel like I need to make the game more engaging and difficult. If I have time, I could add the ability to have multiple characters, and needing to keep all of them alive.
