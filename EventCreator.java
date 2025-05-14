@@ -1,4 +1,4 @@
-public class EventCreator { //Had ChatGPT write this for me because it would've been tedious, but I modified some of the attributes and values of the events.
+public class EventCreator {
     public static Event[] getSampleEvents() {
         Event[] events = new Event[5];
 
@@ -6,7 +6,7 @@ public class EventCreator { //Had ChatGPT write this for me because it would've 
         e1.setDescription("A group of survivors raid your shelter!");
         e1.setHealthImpact(-20);
         e1.setMoraleImpact(-10);
-        e1.setFortificationImpact(-15);
+        e1.setFortificationImpact(-4);
         e1.setFoodChange(80);
         e1.setAmmoChange(80);
         e1.setFoodIsPercent(true);
@@ -28,13 +28,13 @@ public class EventCreator { //Had ChatGPT write this for me because it would've 
 
         Event e4 = new Event();
         e4.setDescription("Your shelter's roof leaks, damaging fortifications.");
-        e4.setFortificationImpact(-10);
+        e4.setFortificationImpact(-5);
         e4.setMoraleImpact(-5);
         events[3] = e4;
 
         Event e5 = new Event();
         e5.setDescription("You are attacked by a horde of zombies.");
-        e5.setFortificationImpact(-20);
+        e5.setFortificationImpact(-5);
         e5.setMoraleImpact(-15);
         e5.setAmmoChange(70);
         e5.setHealthImpact(-15);
