@@ -29,7 +29,7 @@ public class Player {
     public void fortify() { //use small amount of food, increase fortifications 
         if (getStatus("Food") >= 1) {
             System.out.println("You reinforce your shelter.");
-            setStatus("Fortifications", getStatus("Fortifications") + 20);
+            setStatus("Fortifications", getStatus("Fortifications") + 2);
             setStatus("Food", getStatus("Food") - 1);
         } else {
             System.out.println("You're too hungry to do this right now.");
