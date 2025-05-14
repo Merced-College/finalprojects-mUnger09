@@ -1,3 +1,4 @@
+//import java.util.Queue;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -11,8 +12,7 @@ public class FinalProject {
         int actionsLeft;
         Random rand = new Random();
         Event[] events = EventCreator.getSampleEvents();
-        System.out.println("intro"); //need to write simple story
-
+        System.out.println("Insert generic zombie outbreak story");
         while (!dead(player)) { //Main game loop
             actionsLeft = 2; //2 actions per day
             System.out.println("--------------------------");
@@ -60,11 +60,18 @@ public class FinalProject {
                 }
                 actionsLeft--;
             }
-            if (rand.nextInt(100) <= 40) {//random event
+            if (rand.nextInt(100) <= 40 + (int)(player.getStatus("Morale")/10)) {//random event
                 Event e = events[rand.nextInt(events.length - 1)];
                 System.out.println("Random Event! " + e.getDescription());
                 e.applyEvent(player);
-            } else if (rand.nextInt(100 + player.getStatus("Fortifications")) == 1) {//10% chance for zombie attack with 0 fortification, 5% at 200 fortification
+            }
+            int zero;
+            if (player.getStatus("Fortifications") < 0) {
+                zero = 0;
+            } else {
+                zero = player.getStatus("Fortifications");
+            }
+            if (rand.nextInt(10 + zero) == 1) {//10% chance for zombie attack with 0 fortification, 5% at 20 fortification
                 Event e = events[4];
                 System.out.println("Random Event! " + e.getDescription());
                 e.applyEvent(player);
