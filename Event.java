@@ -1,3 +1,7 @@
+//Matias Unger-Ramirez
+//05.19.25
+//My program is a survival/resource management game. 
+
 public class Event {
     private String eventDescription;
     private int healthImpact;
@@ -32,6 +36,15 @@ public class Event {
     public void setAmmoChange(int ammoImpact) {
         ammoChange = ammoImpact;
     }
+
+    public void setFoodIsPercent(boolean b) {
+        foodIsPercent = b;
+    }
+    
+    public void setAmmoIsPercent(boolean b) {
+        ammoIsPercent = b;
+    }
+    
     
     //getters
     public String getDescription() {
@@ -58,15 +71,7 @@ public class Event {
         return ammoChange;
     }
 
-    public void setFoodIsPercent(boolean b) {
-        foodIsPercent = b;
-    }
-    
-    public void setAmmoIsPercent(boolean b) {
-        ammoIsPercent = b;
-    }
-    
-    public void applyEvent(Player player) {
+    public void applyEvent(Player player) {//Adds the amount to the status of Player
         player.setStatus("Health", player.getStatus("Health") + getHealthImpact());
         player.setStatus("Morale", player.getStatus("Morale") + getMoraleImpact());
         player.setStatus("Fortifications", player.getStatus("Fortifications") + getFortificationImpact());
@@ -75,7 +80,7 @@ public class Event {
         }else {
             player.setStatus("Food", player.getStatus("Food") * (getFoodChange()/100));
         }
-        if (!foodIsPercent) {
+        if (!ammoIsPercent) {
             player.setStatus("Ammo", player.getStatus("Ammo") + getAmmoChange());
         }else {
             player.setStatus("Ammo", player.getStatus("Ammo") * (getAmmoChange()/100));
