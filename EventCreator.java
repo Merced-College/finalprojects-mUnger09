@@ -1,5 +1,9 @@
+//Matias Unger-Ramirez
+//05.19.25
+//My program is a survival/resource management game. 
+
 public class EventCreator {
-    public static Event[] getSampleEvents() {
+    public static Event[] getSampleEvents() {//Creates all random events and assigns them the values that affect the player
         Event[] events = new Event[5];
 
         Event e1 = new Event();
